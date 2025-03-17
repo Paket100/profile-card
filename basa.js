@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
-
+    const profileImg = document.getElementById('profile-img');
 
   // Функция для загрузки значений из localStorage
   const loadCounters = () => {
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add(savedTheme);
         if (savedTheme === 'dark-theme') {
             themeIcon.classList.replace('bx-moon', 'bx-sun');
+            profileImg.src = 'https://i.pinimg.com/736x/5b/ef/48/5bef4880f8740d01a1c0e7ad46f59e58.jpg'; // Устанавливаем темную картинку
         }
     }
 
@@ -141,9 +142,11 @@ const iconClick = (event) => {
         if (body.classList.contains('dark-theme')) {
             themeIcon.classList.replace('bx-moon', 'bx-sun');
             localStorage.setItem('theme', 'dark-theme');
+            profileImg.src = 'https://i.pinimg.com/736x/5b/ef/48/5bef4880f8740d01a1c0e7ad46f59e58.jpg';
         } else {
             themeIcon.classList.replace('bx-sun', 'bx-moon');
             localStorage.setItem('theme', 'light-theme');
+            profileImg.src = 'https://i.pinimg.com/736x/c7/44/fd/c744fddb8e4b77f37fd4234fa672efbf.jpg';
         }
     });
 
