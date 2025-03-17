@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const telegramLink = document.querySelector('.telegram-link'); // Ссылка на Telegram
   const instagramLink = document.querySelector('.instagram-link'); // Ссылка на Instagram
   const vkLink = document.querySelector('.vk-link'); // Ссылка на TikTok
-});
+
 
 
 
