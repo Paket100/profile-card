@@ -15,8 +15,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e3e3e3;    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("https://media.foma.ru/2021/09/EYSC4qdWAAApUff.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
 }
+
+body.dark-theme {
+background: linear-gradient(to bottom, #B7B1F2 20%, #FDB7EA 40%, #FFDCCC 80%, #FBF3B9 95%);
+}
+
+
+
+
+
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -36,12 +48,21 @@ body {
     left: 0;
     height: 37%;
     width: 100%;
-    border-radius: 40px 40px 3px 3px;
+    border-radius: 38px 38px 3px 3px;
     background-size:cover;
     background-position: 50% 58%;
     background-image: 
     url('https://i.pinimg.com/736x/c6/01/3c/c6013c216b1ce886319b8e4886f05ceb.jpg')
 }
+
+
+body.dark-theme .profile-card::before {
+    background-size:cover;
+    background-position: 50% 30%;
+    background-image: url('https://i.pinimg.com/736x/2d/ca/2a/2dca2a8c361807afc996e05f71da6351.jpg'); /* Замените на URL темной картинки */
+    filter: brightness(1.3);
+}
+
 .image {
     position: relative;
     top: 30px;
@@ -88,8 +109,11 @@ body {
 }
 .profile-card .media-buttons :hover {
     color: #e43b11;
-transform: scale(1.2);
-    transition: transform 0.3s ease-in-out;
+    font-size: 30px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+    margin-left: 6px;
+    margin-right: 6px;
     
 }
 .media-buttons .link {
@@ -156,13 +180,6 @@ transform: scale(1.2);
     padding: 0 28px;
   
 }
-.data i {
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 3px;
-    transition: transform 0.1s ease-in-out; 
-}
-
 
 
 @keyframes pulse {
@@ -180,6 +197,62 @@ transform: scale(1.2);
 }
 
 
+.data i {
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 3px;
+}
+
+
 .data:last-child {
     border-right: none;
 }
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #f76945;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .theme-toggle {
+    color: #F35916;
+}
+
+
+/* Темная тема */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-theme .profile-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .text-data .name {
+    color: #f0f0f0;
+}
+
+body.dark-theme .text-data .job {
+    color: #b0b0b0;
+}
+
+body.dark-theme .buttons .button1 {
+    background-color: #e43b11;
+    color: #fff;
+}
+
+body.dark-theme .buttons .button2 {
+    background-color: #2d2d2d;
+    color: #ee9b86;
+    border: 1.5px solid #ee9b86;
+}
+
+
