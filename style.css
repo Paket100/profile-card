@@ -56,7 +56,7 @@ background: linear-gradient(to bottom, #B7B1F2 20%, #FDB7EA 40%, #FFDCCC 80%, #F
 }
 
 
-body.dark-theme .profile-card::before {
+.dark-theme .profile-card::before {
     background-size:cover;
     background-position: 50% 30%;
     background-image: url('https://i.pinimg.com/736x/2d/ca/2a/2dca2a8c361807afc996e05f71da6351.jpg'); /* Замените на URL темной картинки */
@@ -84,6 +84,14 @@ body.dark-theme .profile-card::before {
     object-fit: cover;
     cursor: pointer;
 }
+
+.dark-theme .image .profile-img {
+    top: 0px;
+    left: -8px;
+    height: 185%;
+    width: 124%;
+}
+
 
 .profile-card .text-data {
     display: flex;
@@ -113,6 +121,12 @@ body.dark-theme .profile-card::before {
       color: #e43b11;
     
 }
+
+.dark-theme .profile-card .media-buttons :hover {
+        color: #ff2f4b;
+      
+  }
+
 .media-buttons .link {
     display: flex;
     align-items: center;
@@ -122,6 +136,9 @@ body.dark-theme .profile-card::before {
     text-decoration: none;
     color: #332e57;
     
+}
+.dark-theme .media-buttons .link {
+    color: #14215c;
 }
 
 .profile-card .buttons {
@@ -147,6 +164,11 @@ body.dark-theme .profile-card::before {
 
 }
 
+.dark-theme .buttons .button1:hover {
+    background-color: #ff2f4b;
+
+}
+
 .buttons .button2 {
     font-size: 16px;
     font-weight: 400;
@@ -165,6 +187,11 @@ body.dark-theme .profile-card::before {
     color: #ffff;
 
 }
+.dark-theme .buttons .button2:hover {
+    background-color: #ffffff;
+    color: #b19fee;
+
+}
 .profile-card .analytics {
     display: flex;
     align-items: center;
@@ -177,17 +204,36 @@ body.dark-theme .profile-card::before {
     padding: 0 28px;
   
 }
+.dark-theme .analytics .data {
+    color:  #14215c;
+}
 
 
+
+/* Светлая тема (по умолчанию) */
+:root {
+    --pulse-color: #e43b11; /* Цвет анимации для светлой темы */
+}
+
+/* Темная тема */
+body.dark-theme {
+    --pulse-color: #ff2f4b; /* Цвет анимации для темной темы */
+}
+
+/* Анимация pulse */
 @keyframes pulse {
     50% {
         transform: scale(1.5); /* Увеличение до 150% от исходного размера */
-      color: #e43b11;
+        color: var(--pulse-color); /* Используем CSS-переменную */
     }
     100% {
         transform: scale(1); /* Возвращение к исходному размеру */
     }
 }
+
+
+
+
 
 .data i.pulse {
     animation: pulse 0.5s ease-in-out forwards; /* Анимация пульсации */
@@ -218,38 +264,32 @@ body.dark-theme .profile-card::before {
 }
 
 body.dark-theme .theme-toggle {
-    color: #F35916;
+    color: #ffffff;
 }
 
-
-/* Темная тема */
-body.dark-theme {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
-}
 
 body.dark-theme .profile-card {
-    background-color: #2d2d2d;
+    background-color: #b19fee;
     box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
 }
 
 body.dark-theme .text-data .name {
-    color: #f0f0f0;
+    color: #ffffff;
 }
 
 body.dark-theme .text-data .job {
-    color: #b0b0b0;
+    color: #ffffff;
 }
 
 body.dark-theme .buttons .button1 {
-    background-color: #e43b11;
+    background-color: #ff546a;
     color: #fff;
 }
 
 body.dark-theme .buttons .button2 {
-    background-color: #2d2d2d;
-    color: #ee9b86;
-    border: 1.5px solid #ee9b86;
+    background-color: #b19fee;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
 }
 
 
